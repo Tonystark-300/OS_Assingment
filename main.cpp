@@ -264,7 +264,9 @@ int main()
 		cout << " " << proc[i].process_id << "\t\t" << proc[i].arrival_time <<"\t "
              << proc[i].burst_time <<"\t\t " << proc[i].priority <<endl;
 	}
-
+ cout<<"\n-------------------------Level 1-------------------------"<<endl;
+    cout<<"               Fixed pre-emptive scheduling"<<endl;
+    priorityScheduling(proc, n);
    
     
 }
