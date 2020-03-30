@@ -13,6 +13,34 @@ struct Process
     int burst_time;   
     int priority; 
 };
+bool comparison(Process a, Process b)
+{
+    return !(a.priority > b.priority);
+}
+
+void priorityScheduling(Process proc[], int n)
+{
+	
+	int temp = 0;
+	for(int i = 0 ; i < n; i++)
+	{
+		temp = temp + proc[i].burst_time;
+		
+	}
+	
+	
+	// Sort processes by priority8
+    sort(proc, proc + n, comparison);
+	
+	
+	//needed for level 2
+	// process id's
+    int processes[20];
+ 
+    // Burst time of all processes
+    int Burst_time[20];
+	
+	 
 int main()
 {
 	int p1[6],a1[6],b1[6],pr[6];
