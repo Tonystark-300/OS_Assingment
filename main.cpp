@@ -39,6 +39,73 @@ void priorityScheduling(Process proc[], int n)
  
     // Burst time of all processes
     int Burst_time[20];
+	//level 1
+	//  main Logic to communicate between the levels
+
+	int i,j=0,f=0,newi=0;
+	int time = 0;
+	bool flag2 = true;
+	bool flag1 = true;
+	
+	while(flag1)
+	{	
+		for(i = 0; i < n; ++i)
+		{
+			
+			if(time >= proc[i].arrival_time and proc[i].process_id != -1)
+			{
+				
+				if(proc[i].burst_time != 0)
+					{
+					
+					
+					if(flag2)
+					{
+						j = i;
+						flag2 = false;
+					}
+					
+					proc[i].burst_time = proc[i].burst_time -1;
+					
+					if(proc[i].burst_time == 0)
+					{
+						array1[test]= proc[i].process_id;
+						test++;
+						
+					}
+					
+					if(i != j )
+					{
+						if(proc[j].burst_time != 0)
+						{
+					
+						processes[newi] = proc[j].process_id;
+						Burst_time[newi] = proc[j].burst_time;
+						proc[j].process_id = -1;
+						newi++;
+						j = i;
+						}
+						else
+						{
+						flag2 = true;
+						}
+					
+					}
+				
+				
+					i = -1;				
+					time++;
+				}	
+			}
+			
+		}
+		if(time >= temp)
+			{
+				flag1 = false;
+			}
+		time++;
+		
+	}
 	
 	 
 int main()
