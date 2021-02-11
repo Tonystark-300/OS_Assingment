@@ -40,7 +40,7 @@ void priorityScheduling(Process proc[], int n)
     // Burst time of all processes
     int Burst_time[20];
 	//level 1
-	//  main Logic to communicate between the levels
+	//  main Logic to communicate between the level
 
 	int i,j=0,f=0,newi=0;
 	int time = 0;
